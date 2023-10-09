@@ -1,0 +1,24 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Hello') {
+            steps {
+                git branch: 'main', credentialsId: '4f4283ab-b373-478e-bb7f-6e28b0bcb7c7', url: 'https://github.com/aroop1/devop1.git'
+                echo 'Hello World'
+            }
+        }
+        stage('Build') {
+            steps {
+                
+                echo 'new stage for build'
+            }
+        }
+        stage('Cron') {
+            steps {
+                
+                echo 'Auto job run'
+            }
+        }
+    }
+}
